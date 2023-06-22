@@ -34,9 +34,19 @@ const userSlice=createSlice({
                 }
             })
         },
+        deletecv:(state,action)=>{
+            state.users.forEach((x)=>{
+                if(x.mobile===action.payload.mobile){
+                    console.log(x)
+                    x.cvs=x.cvs.filter((y)=>{
+                        return y.id!==action.payload.id
+                    })
+                }
+            })
+        },
 
     }
 })
 
 export default userSlice.reducer
-export const {reqLoggout,setCv,reqLogin,addUser}=userSlice.actions
+export const {deletecv,reqLoggout,setCv,reqLogin,addUser}=userSlice.actions

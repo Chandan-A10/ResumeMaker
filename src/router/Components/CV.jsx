@@ -51,6 +51,7 @@ export const CV=()=>{
         setvalues('')
     };
     const onFinish = (val) =>{
+        val.user.id=Date.now()
         dispatch(setCv({mobile:mobile,user:val.user}))
         console.log(users)
     }
@@ -98,9 +99,9 @@ export const CV=()=>{
             <Modal title={values?.user?.name || 'Name Here'} open={isModalOpen} onOk={()=>setIsModalOpen(false)} onCancel={()=>setIsModalOpen(false)} cancelButtonProps={{disabled:true}}>
                 <p><b>Email: </b><span>{values?.user?.email || 'example@gmail.com'}</span></p>
                 <p><b>Summary: </b><span>{values?.user?.summary || 'write a short summary for job you applying for'}</span></p>
-                <p><b>Experience: </b><span>{values?.user?.email || 'write about previous jobs or any other experience'}</span></p>
+                <p><b>Experience: </b><span>{values?.user?.experience || 'write about previous jobs or any other experience'}</span></p>
                 <p><b>Skills: </b><span>{values?.user?.skills || 'mention your technical and interpersonal skills'}</span></p>
-                <p><b>Skills: </b><span>{values?.user?.skills || '#351,G.F, Barotiwala, Baddi, Himachal'}</span></p>
+                <p><b>Address: </b><span>{values?.user?.address || '#351,G.F, Barotiwala, Baddi, Himachal'}</span></p>
                 <p><b>Contact number: </b><span>{values?.user?.phone || '+91 000-000-0000'}</span></p>
             </Modal>
             
