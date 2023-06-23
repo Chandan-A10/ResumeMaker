@@ -1,4 +1,4 @@
-import { CV } from "../Components/CV"
+import CV from "../Components/AddCV"
 
 
 export const CVPage=()=>{

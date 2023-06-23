@@ -1,3 +1,4 @@
+import ImageSelectionModal from "../Components/SelectionModal"
 import { CVPage } from "../Pages/CVPage"
 import { DashboardPage } from "../Pages/DashboardPage"
 import { LoginPage } from "../Pages/LoginPage"
@@ -7,6 +8,10 @@ export const PublicRoute=[
     {
         path:'/',
         element:<LoginPage/>
+    },
+    {
+        path:'/tmp',
+        element:<ImageSelectionModal/>
     }
 ]
 

@@ -1,0 +1,24 @@
+.resume-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+}
+.resume-form-card {
+    width: 600px;
+} 
+.inner-card {
+    margin-top: 20px;
+}  
+.preview-button {
+    margin-right: 30px;
+} 
+.save-button {
+    margin-right: 30px;
+} 
+.go-back-button {
+    margin-right: 30px;
+} 
+.clear-button {
+    margin-right: 50px;
+}

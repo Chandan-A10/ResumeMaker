@@ -31,7 +31,7 @@ export const Login=()=>{
         <>
         <div style={loginStyles.container}>
             <Card title='Enter Number' style={loginStyles.card} headStyle={loginStyles.title}>
-                <Input style={loginStyles.input} type="number" placeholder="+91" onChange={(e)=>setvalue(e.target.value)}></Input>
+                <Input style={loginStyles.input} type="number" placeholder="+91 000-000-0000" onChange={(e)=>setvalue(e.target.value)}></Input>
                 <Button style={loginStyles.button} onClick={handleClick}>Submit</Button>
             </Card>
         </div>
