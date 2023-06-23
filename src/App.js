@@ -1,7 +1,5 @@
 import { MyRoute } from "./router/main";
 
-
-
 const App=()=> {
   return (
     <>

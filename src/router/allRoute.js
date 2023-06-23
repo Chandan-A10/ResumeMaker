@@ -1,7 +1,7 @@
-import { CVPage } from "./Pages/CVPage"
-import { DashboardPage } from "./Pages/DashboardPage"
-import { LoginPage } from "./Pages/LoginPage"
-import { OTPpage } from "./Pages/OTPpage"
+import { CVPage } from "../Pages/CVPage"
+import { DashboardPage } from "../Pages/DashboardPage"
+import { LoginPage } from "../Pages/LoginPage"
+import { OTPpage } from "../Pages/OTPpage"
 
 export const PublicRoute=[
     {
