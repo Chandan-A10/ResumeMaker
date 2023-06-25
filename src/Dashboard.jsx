@@ -1,14 +1,15 @@
-import { Menu, Row } from "antd"
-import CvModal from "./cvModal"
+import { Button, Empty, Menu, Row } from "antd"
+import {  AppstoreOutlined, MailOutlined, SettingOutlined  } from '@ant-design/icons'
+import CvCard from "./Components/cvCard"
+import CvModal from "./Components/cvModal"
 import {  useState } from "react"
-import useAuthenticationCheck from "../utils/auth"
-import { reqLoggout, deletecv } from "../reducer/user"
+// import useAuthenticationCheck from "./utils/auth"
+import { reqLoggout, deletecv } from "./reducer/user"
 import { useDispatch, useSelector } from "react-redux"
-import { useNavigate, useSearchParams } from "react-router-dom"
-import {PlusCircleOutlined,LogoutOutlined, AppstoreOutlined,PaperClipOutlined } from '@ant-design/icons'
-import SelectionModel from "./SelectionModal"
-import Published from "./Published"
-import Draft from './Draft.jsx'
+import { Link, useNavigate, useSearchParams } from "react-router-dom"
+import {PlusCircleOutlined,LogoutOutlined } from '@ant-design/icons'
+import SelectionModel from "./Components/SelectionModal"
+import { loginStyles } from "./assests/styles/loginStyle"
 
 export const Dashboard=()=>{
     const [values, setvalues] = useState(null)
@@ -20,7 +21,7 @@ export const Dashboard=()=>{
     const mobile=search.get('mobile')
     const dispatch=useDispatch()
 
-    useAuthenticationCheck(mobile,users)
+    // useAuthenticationCheck(mobile,users)
 
     const cvList = users.find(user => user.mobile === mobile)?.cvs || [];
 
@@ -48,7 +49,7 @@ export const Dashboard=()=>{
         {
           label: 'My Published Resume',
           key: 'pb',
-          icon: <PaperClipOutlined />,
+          icon: <MailOutlined />,
         },
         {
           label: 'Draft Box',
@@ -67,10 +68,21 @@ export const Dashboard=()=>{
       ];
     return(
         <>
-        <Menu onClick={onClick}  mode="horizontal" items={items} style={{ lineHeight:'60px',backgroundColor: '#edfdff'}}></Menu>
+        <Menu onClick={onClick}  mode="horizontal" items={items}></Menu>
         <Row gutter={16}>
-        {current==='pb' && <Published cvList={cvList} deleteCV={deleteCV} previewCV={previewCV}/>}
-        {current==='draft' && <Draft cvList={cvList} deleteCV={deleteCV} previewCV={previewCV}/>}  
+        <div className="resume-dashboard">
+        {(cvList.length===0)?<Empty/>:(
+            cvList.map((x)=>(
+                <CvCard
+                key={x.id}
+                cv={x}
+                deleteCv={deleteCV}
+                previewCv={previewCV}
+                >
+                </CvCard>
+            ))
+        )}
+        </div>
         </Row>
         <CvModal cv={values} open={isModalOpen} closeModal={()=>setIsModalOpen(false)} />
         <PlusCircleOutlined style={{cursor:'pointer',fontSize:'50px',position:'fixed',bottom:50,right:50}} onClick={chooseTemp} />

@@ -3,6 +3,7 @@ import { Modal } from 'antd';
 import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom"
 import temp1 from '../assests/tempImages/temp1.png'
 import temp2 from "../assests/tempImages/temp2.png";
+import temp3 from "../assests/tempImages/temp3.png"
 
 const SelectionModel=({open,closeModal}) => {
     const navigator=useNavigate()
@@ -15,7 +16,7 @@ const SelectionModel=({open,closeModal}) => {
     };
     const handleConfirm=()=>{
         console.log(selectedTemp)
-        navigator({pathname:'/cv',search:createSearchParams({mobile:mobile,temp:selectedTemp}).toString()})
+        navigator({pathname:'/tmp',search:createSearchParams({mobile:mobile,temp:selectedTemp}).toString()})
         closeModal()
         return
     };
@@ -24,19 +25,19 @@ const SelectionModel=({open,closeModal}) => {
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <img
             src={temp1}
-            alt="Image 1"
+            alt="temp 1"
             style={{width:'30%',border:selectedTemp==='1'?'2px solid black':'none'}}
             onClick={()=>handleImageClick('1')}
             />
             <img
             src={temp2}
-            alt="Image 2"
+            alt="temp 2"
             style={{width:'30%',border:selectedTemp==='2'?'2px solid black':'none'}}
             onClick={() => handleImageClick('2')}
             />
             <img
-            src={temp1}
-            alt="Image 3"
+            src={temp3}
+            alt="temp 3"
             style={{width:'30%',border:selectedTemp==='3'?'2px solid black':'none'}}
             onClick={() => handleImageClick('3')}
             />

@@ -1,15 +1,12 @@
 import Modal from "antd/es/modal/Modal";
-import Template1 from "./templates/Temp1"
-import Template2 from "./templates/Temp2";
-import { Button } from "antd";
 import {  useState } from "react"
 import SelectionModel from "./SelectionModal";
+import Resume from "./Resume/Resume";
+import Resume2 from "./Resume/Resume2";
+import Resume3 from "./Resume/Resume3";
 
 const CvModal = ({temp,cv,open,closeModal}) => {
     const [TempOpen, setTempOpen] = useState(false);
-    const chooseTemp=()=>{
-        setTempOpen(true)
-    }
     const template=cv?.temp || temp
     return(
       <>
@@ -18,11 +15,11 @@ const CvModal = ({temp,cv,open,closeModal}) => {
         onOk={closeModal}
         onCancel={closeModal}
         cancelButtonProps={{ disabled: true }}
+        width={'700px'}
       >
-        {(parseInt(template)===1 || parseInt(template)===3) ? <Template2 cv={cv}/>:<Template1 cv={cv}></Template1>}
-        {cv?.temp || 
-        <Button onClick={chooseTemp}>Change Template</Button>
-        }
+        {parseInt(template)===1 && <Resume3 values={cv}></Resume3>}
+        {parseInt(template)===2 && <Resume values={cv}></Resume>}
+        {parseInt(template)===3 && <Resume2 values={cv}></Resume2>}
       </Modal>
       <SelectionModel open={TempOpen} closeModal={()=>setTempOpen(false)}></SelectionModel>
       </>

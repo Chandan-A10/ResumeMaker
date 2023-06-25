@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useHistory } from "react-router-dom";
 
 const useAuthenticationCheck = (mobile, users) => {
   const navigator = useNavigate();
@@ -8,10 +8,10 @@ const useAuthenticationCheck = (mobile, users) => {
     if (mobile) {
       const doesUserAuthenticated = users.some((user) => user.mobile === mobile && user.isAuth);
       if (!doesUserAuthenticated) {
-        navigator("/");
+        navigator('/',{state:'Login First'});
       }
     } else {
-      navigator("/");
+      navigator("/",{state:'Login First'});
     }
   }, [mobile, navigator, users]);
 };

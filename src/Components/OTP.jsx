@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux"
+import useAuthenticationCheck from "../utils/auth"
 import { otpStyle } from "../assests/styles/otpStyle"
 import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom"
-import useAuthenticationCheck from "../utils/auth"
+import { loginStyles } from "../assests/styles/loginStyle"
 
 export const OTP=()=>{
     const users=useSelector((state)=>state.users)
@@ -12,17 +13,16 @@ export const OTP=()=>{
     useAuthenticationCheck(mobile,users)
 
     const confirmOtp=()=>{
+
         const fir = document.getElementById("fir")?.value;
         const sec = document.getElementById("sec")?.value;
         const third = document.getElementById("third")?.value;
         const fourth = document.getElementById("fourth")?.value;
         const otpValue=fir+sec+third+fourth
-        console.log(otpValue)
-        if(otpValue === process.env.REACT_APP_OTP){
-            navigator({ pathname: "/dashboard", search: createSearchParams({ mobile }).toString() });
-        }else{
-            document.getElementById("h1").innerText = "Wrong OTP";
-        }
+
+        otpValue===process.env.REACT_APP_OTP?
+        navigator({pathname:"/dashboard",search:createSearchParams({mobile }).toString()})
+        :document.getElementById("h1").innerText = "Wrong OTP";
     }
     
     const handleFocus=(e,nextInputId)=>{
@@ -35,7 +35,8 @@ export const OTP=()=>{
 
     return(
         <>
-        <div style={otpStyle.conatainer}>
+        <div style={loginStyles.container}>
+        <div style={otpStyle.container}>
         <h1 style={otpStyle.heading} id="h1">ENTER OTP</h1>
         <div style={otpStyle.userInput}>
             <input style={otpStyle.input} type="number" id='fir' maxLength={1} onKeyUp={(e)=>handleFocus(e,'sec')}/>
@@ -44,6 +45,7 @@ export const OTP=()=>{
             <input style={otpStyle.input} type="number" id="fourth" maxLength={1} onKeyUp={handleFocus}/>
         </div>
         <button style={otpStyle.button} onClick={confirmOtp}>Confirm</button>
+        </div>
         </div>
         </>
     )

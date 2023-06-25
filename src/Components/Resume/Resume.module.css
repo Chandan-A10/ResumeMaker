@@ -1,0 +1,67 @@
+.container {
+    min-width: 40vw;
+    height: fit-content;
+    min-height: 90vh;
+    box-shadow: 1px 1px 3px black;
+}
+  
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: -7%;
+    padding-left: 2%; 
+}
+  
+.header .heading {
+    font-size: 2.7rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+  
+.header .subheading {
+    text-transform: capitalize;
+    color: rgb(222, 80, 103);
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-top: -7%; 
+}
+  
+.header .links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: -1.5%;
+}
+  
+.header .link {
+    font-size: 0.9rem;
+}
+  
+.header .link svg {
+    color: blue;
+    height: 18px;
+    width: 18px;
+}
+.body {
+    display: flex; /* Add display flex */
+    flex-direction: row; /* Set flex direction to row */
+}
+  
+.section {
+    flex: 2; /* Distribute equal width to each section */
+    padding: 10px;
+    border-right: 2px solid;
+    height: 70vh;
+}
+
+.right_heading{
+    margin-top:-4% ;
+    font-size: 2rem;
+}
+
+.right_section {
+    flex: 1; /* Set flex value to 1 for right section */
+    padding: 5px;
+}
+  

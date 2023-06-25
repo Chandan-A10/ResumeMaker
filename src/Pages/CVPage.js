@@ -1,8 +1,8 @@
-import CV from "../Components/AddCV"
+import Editor from "../Components/Editor/Editor"
 
 
 export const CVPage=()=>{
     return(
-        <CV/>
+        <Editor/>
     )
 }

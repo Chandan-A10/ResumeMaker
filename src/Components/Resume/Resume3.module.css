@@ -1,0 +1,111 @@
+.container {
+    min-width: 40vw;
+    height: fit-content;
+    min-height: 90vh;
+    box-shadow: 1px 1px 3px black;
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+  
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+  
+.left {
+    flex: 1;
+}
+  
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+  
+.heading {
+    font-size: 2.7rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0;
+}
+  
+.subheading {
+    text-transform: capitalize;
+    color: rgb(222, 80, 103);
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin: 0;
+}
+  
+.links {
+    display: flex;
+    gap: 10px;
+}
+  
+.link {
+    font-size: 0.9rem;
+}
+  
+.link svg {
+    color: blue;
+    height: 18px;
+    width: 18px;
+}
+  
+.body {
+    display: flex;
+}
+  
+.leftSection {
+    flex: 2;
+}
+  
+.rightSection {
+    flex: 1;
+    padding: 10px;
+}
+  
+.section {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.sectionHeading {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+  
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+  
+li {
+    margin-bottom: 10px;
+}
+  
+.hr {
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+  
+.skillsList {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.skill {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+  

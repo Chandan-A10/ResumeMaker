@@ -1,0 +1,82 @@
+.container {
+    min-width: 40vw;
+    height: fit-content;
+    min-height: 90vh;
+    box-shadow: 1px 1px 3px black;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .heading {
+    font-size: 2.7rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .subheading {
+    text-transform: capitalize;
+    color: rgb(222, 80, 103);
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-top: -10px;
+  }
+  
+  .links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: -10px;
+  }
+  
+  .link {
+    font-size: 0.9rem;
+  }
+  
+  .link svg {
+    color: blue;
+    height: 18px;
+    width: 18px;
+  }
+  
+  .body {
+    display: flex;
+  }
+  
+  .leftSection {
+    flex: 2;
+    padding: 20px;
+    border-right: 2px solid;
+    height: 70vh;
+  }
+  
+  .rightSection {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .sectionHeading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .skills {
+    padding: 20px;
+    border-top: 2px solid;
+  }
+  
+  .skills .sectionHeading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  

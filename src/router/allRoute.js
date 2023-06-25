@@ -1,4 +1,4 @@
-import ImageSelectionModal from "../Components/SelectionModal"
+import Editor from "../Components/Editor/Editor"
 import { CVPage } from "../Pages/CVPage"
 import { DashboardPage } from "../Pages/DashboardPage"
 import { LoginPage } from "../Pages/LoginPage"
@@ -11,7 +11,7 @@ export const PublicRoute=[
     },
     {
         path:'/tmp',
-        element:<ImageSelectionModal/>
+        element:<Editor/>
     }
 ]
 

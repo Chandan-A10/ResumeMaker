@@ -27,6 +27,7 @@ const userSlice=createSlice({
             })
         },
         setCv:(state,action)=>{
+            console.log(action.payload)
             state.users.forEach((x)=>{
                 if(x.mobile===action.payload.mobile){
                     x.cvs.push(action.payload.user)

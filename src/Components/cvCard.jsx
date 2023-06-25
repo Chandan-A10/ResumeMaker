@@ -1,4 +1,4 @@
-import { Button, Col, Card } from "antd";
+import { Button, Card } from "antd";
 import {ExpandAltOutlined, DeleteOutlined} from '@ant-design/icons'
 import '../assests/styles/dashboard.css'
 const CvCard = ({ cv, deleteCv, previewCv }) => {
@@ -12,14 +12,14 @@ const CvCard = ({ cv, deleteCv, previewCv }) => {
       <Card className="resume-card"
         extra={
           <>
-            <Button className="delete-button" type="danger"  shape="circle" icon={<DeleteOutlined onClick={handledelete} />} />
-            <Button className="preview-button" shape="circle" icon={<ExpandAltOutlined onClick={handlepreview} />} />
+            <Button className="delete-button" type="danger" onClick={handledelete} shape="circle" icon={<DeleteOutlined  />} />
+            <Button className="preview-button" shape="circle" onClick={handlepreview} icon={<ExpandAltOutlined  />} />
           </>
         }
-        title={cv.name}
+        title={cv.basicinfo.name}
       >
-      <p>Email: {cv.email}</p>
-      <p>Phone: {cv.phone}</p>
+      <p>Email: {cv.basicinfo.email}</p>
+      <p>Phone: {cv.basicinfo.phone}</p>
       </Card>
     )
 }

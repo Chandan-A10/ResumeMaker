@@ -1,10 +1,14 @@
 export const otpStyle={
-    conatainer:{
+    container:{
         display: 'flex',
         flexFlow: 'column',
         height: '100%',
         alignItems: 'space-around',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop:'150px',
+        minHeight:'50vh',
+        backgroundColor: 'rgb(244, 237, 238)'
+        
     },
     userInput:{
         display:'flex',
@@ -30,12 +34,12 @@ export const otpStyle={
         borderRadius: '5px',
         letterSpacing: '2px',
         cursor: 'pointer',
-        background: '#616161',
+        backgroundImage: 'linear-gradient(to right, #EC048A ,#FB5D6B)',
         color:'white'
     },
     heading:{
         textAlign: 'center',
         fontFamily: 'arimo',
-        color: 'black',
+        color: '#EC048A',
     }
 }
